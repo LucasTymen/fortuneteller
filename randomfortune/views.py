@@ -4,9 +4,11 @@ from django.shortcuts import render
 # Create your views here.
 def fortune(request):
   fortune = random.choice(fortuneList)
-  return render (request, "randomfortune/fortune.html", fortune)
+  return render (request, "randomfortune/fortune.html", context)
 
-context ={"fortune": context}
+context = {
+  "fortune" : fortune
+  }
 
 fortuneList = [
     "All will go well with your new project.",
